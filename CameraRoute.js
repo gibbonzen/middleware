@@ -2,7 +2,24 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-	res.send('Module caméra')
+	console.log('client on /camera')
+	res.json({
+		module: 'caméra'
+	})
 })
 
-module.exports = router
+function test(socket, next) {
+	socket.on('camera', (data) => {
+		console.log('test camera') 
+	})
+
+	event.on('new', n => console.log(n))
+
+	next()
+}
+
+
+module.exports = {
+	router: router,
+	//socket: test
+}

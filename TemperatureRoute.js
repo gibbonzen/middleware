@@ -2,7 +2,16 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {
-	res.send('Module température')
+	res.json({
+		module: 'température'
+	})
 })
 
-module.exports = router
+
+function test(socket) {
+	console.log('test température')
+}
+
+module.exports = {
+	router: router
+}

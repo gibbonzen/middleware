@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+	<meta charset="utf-8">
+	<title>Index server_k</title>
+</head>
+<body>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="js/app.js"></script>-->
+	<script type="text/javascript" src="http://localhost:8081/socket.io/socket.io.js"></script>
+	<script type="text/javascript">
+		const socket = io.connect('http://localhost:8081')
+		socket.emit('camera', 'test')
+		socket.on('message', msg => {
+			console.log(msg)
+		})
+	</script>
+</body>
+</html>
