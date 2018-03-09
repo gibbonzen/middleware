@@ -1,0 +1,22 @@
+{
+	"self": {
+		"name": "server_k",
+		"device": true,
+		"host": "localhost",
+		"port": 8081, 
+		"routes": [
+			"/camera",
+			"/temperature"
+		]
+	},
+	"server": {
+		"name": "server_h",
+		"host": "localhost", 
+		"port": 8080,
+		"register": {
+			"connect": "/register",
+			"disconnect": "/unregister",
+			"method": "POST"
+		}
+	}
+}

@@ -5,12 +5,10 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const request = require('request')
 const bodyParser = require('body-parser')
-
+const Tools = require('./lib/Tools')
+const LOG = require('./lib/LOG')
 const EventEmitter = require('events')
-
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({extended: true}))
-
+const Register = require('./lib/Register')
 
 const config = {
 	self: {
@@ -21,67 +19,50 @@ const config = {
 }
 
 server.listen(config.self.port, config.self.host, () => {
-	console.log(`Listen on http://${config.self.host}:${config.self.port}`)
+	LOG.server(`Listen on http://${config.self.host}:${config.self.port}`)
 })
+
+app.use(bodyParser.json())
+app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-	console.log('client on /')
+	LOG.client('Client on /')
 })
 
+// REGISTER 
+// To add routes from client
 const clients = []
-app.post('/register', (req, res) => {
+Register.onRegister((req, res) => {
 	let client = req.body
-	clients.push(client)
-
-	if(client.device !== undefined && client.device === true
-		&& client.routes !== undefined && client.routes !== null) {
-		console.log('New routes find')
-		console.log(client.routes)
-		addRoutes(client)
-	}
+	addClient(client)
 
 	res.writeHead(200)
 	res.write(`Register on ${config.self.name}`)
-	res.end()
 })
-app.post('/unregister', (req, res) => {
+Register.onUnregister((req, res) => {
+	console.log('ici')
 	let client = req.body
 	clients.splice(clients.indexOf(client))
 
 	res.writeHead(200)
-	res.write(`Unegister on ${config.self.name}`)
-	res.end()
+	res.write(`Unregister form ${config.self.name}`)
 })
 
-// Event on exit to notify clients
-process.on('SIGINT', () => {
-	if(clients.length === 0)
-		process.exit()
-	notifyClients('close', () => process.exit())
-})
+app.use(Register.router)
 
-/////////////////////////////////
-
-function notifyClients(event, next) {
-	clients.forEach(c => notify(c, event, next))
-}
-
-function notify(client, event, next) {
-	let options = {
-		headers: {'Content-Type': 'application/json'},
-		url: `http://${client.host}:${client.port}/unregister`,
-		json: true,
-		body: config.self
+function addClient(client) {
+	if(clients.find(c => c.name === client.name) !== undefined) {
+		LOG.log(LOG.LEVEL.INFO, 'Client is allready register')
 	}
+	else {
+		clients.push(client)
 
-	request.post(options, (err, res, body) => {
-		if(body) 
-			console.log(body)
-		if(err) 
-			console.log(`Error on unregister on ${client.name}`)
-
-		next()
-	})
+		if(client.device !== undefined && client.device === true
+			&& client.routes !== undefined && client.routes !== null) {
+			LOG.server('New routes find')
+			addRoutes(client)
+		}
+	}
 }
 
 function addRoutes(client) {
@@ -96,7 +77,7 @@ function addRoute(route, client) {
 
 function createRoute(method, route, client) {
 	let forward = `http://${client.host}:${client.port}${route}`
-	console.log(`new route: ${route} -> ${forward}`)
+	LOG.client(`New route: ${route} -> ${forward}`)
 
 	if('GET' === method) {
 		return router.get(route, (req, res) => {
@@ -107,6 +88,36 @@ function createRoute(method, route, client) {
 
 function forwarding(route, res) {
 	request.get(route, (err, resp, body) => {
+		let header = resp.headers['content-type'].split(';')[0]
+		res.setHeader('Content-Type', header)
 		res.send(body)
+	})
+}
+
+// Event on exit to notify clients
+process.on('SIGINT', () => {
+	if(clients.length === 0)
+		process.exit()
+	notifyClients('close', () => process.exit())
+})
+
+function notifyClients(event, next) {
+	clients.forEach(c => notify(c, event, next))
+}
+
+function notify(client, event, next) {
+	let options = {
+		headers: {'Content-Type': 'application/json'},
+		url: `http://${client.host}:${client.port}/unregister`,
+		json: true,
+		body: config.self
+	}
+
+	request.post(options, (err, res, body) => {
+		if(!err && res.statusCode == 200) {
+
+		}
+
+		next()
 	})
 }

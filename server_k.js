@@ -4,80 +4,50 @@ const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const request = require('request')
 const bodyParser = require('body-parser')
-
-const EventEmitter = require('events')
+const Tools = require('./lib/Tools')
+const LOG = require('./lib/LOG')
+const Connect = require('./lib/Connect')
+//const EventEmitter = require('events')
+const Register = require('./lib/Register')
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-const config = {
-	self: {
-		name: 'server_k',
-		device: true,
-		host: 'localhost',
-		port: 8081, 
-		routes: [
-			'/camera',
-			'/temperature'
-		]
-	},
-	server_h: {
-		name: 'server_h',
-		host: 'localhost', 
-		port: 8080
-	}
-}
+const config = Tools.loadJsonFile('./config.json')
+
+let connection = config.server
+connection.body = config.self
+
+const toHome = new Connect(connection, true)
 
 server.listen(config.self.port, config.self.host, () => {
-	console.log(`Listen on http://${config.self.host}:${config.self.port}`)
-	connectTo(config.server_h)
+	LOG.client(`Listen on http://${config.self.host}:${config.self.port}`)
+	toHome.connect()
 })
 
-function connectTo(server) {
-	console.log(`Try to connect to home server on http://${server.host}:${server.port}`)
-
-	request.post({
-		headers: {'Content-Type': 'application/json'},
-		url: `http://${server.host}:${server.port}/register`, 
-		json: true,
-		body: config.self
-	}, (err, res, body) => {
-		if(err) {
-			console.log(`Connection error on ${server.name}`)
-
-			if('ECONNREFUSED' === err.code) {
-				retry(server)
-			}
-		}
-
-		if(body) console.log(body)
-	})
-}
-
-function retry(server) {
-	console.log('retry')
-	connectTo(server)
-}
-
-app.post('/unregister', (req, res) => {
+// REGISTER
+// Unregister is used by server to notify client her disconnection
+Register.onUnregister((req, res) => {
 	let client = req.body
-	if(client.name === config.server_h.name) {
-		res.writeHead(200)
-		res.write(`Unregister from ${config.self.name}`)
-		res.end()
-
-		registration.emit('reconnect', client)
+	if(client.name === config.server.name) {
+		LOG.log(LOG.LEVEL.WARNING, `Disconnect from ${config.server.name}.`)
+		toHome.emit('connect', false)
 	}
 })
 
-const registration = new EventEmitter()
-registration.on('reconnect', server => {
-	retry(server)
+app.use(Register.router)
+
+// Event on exit to notify server
+process.on('SIGINT', () => {
+	if(!toHome.isConnected())
+		process.exit()
+	notifyServer('disconnect', () => process.exit())
 })
 
-
-
-
+function notifyServer(event, disconnect) {
+	toHome.emit(event, this)
+	disconnect()
+}
 
 
 let devices = {
@@ -91,7 +61,7 @@ let devices = {
 	}
 }
 
-const Router = require('./Route')
+const Router = require('./lib/Route')
 
 for(let index in devices) {
 	if(devices.hasOwnProperty(index)) {
@@ -99,10 +69,5 @@ for(let index in devices) {
 		let myRouter = Router(device.type)
 
 		app.use(device.path, myRouter.router)
-//		io.use(myRouter.socket)
 	}
 }
-
-/*io.on('connection', (socket) => {
-	console.log('connection')
-})*/
