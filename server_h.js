@@ -9,14 +9,9 @@ const Tools = require('./lib/Tools')
 const LOG = require('./lib/LOG')
 const EventEmitter = require('events')
 const Register = require('./lib/Register')
+const SimpleRouter = require('./lib/SimpleRouter')
 
-const config = {
-	self: {
-		name: 'server_h',
-		host: 'localhost',
-		port: 8080
-	}
-}
+const config = Tools.loadJsonFile('./config_server_h.json')
 
 server.listen(config.self.port, config.self.host, () => {
 	LOG.server(`Listen on http://${config.self.host}:${config.self.port}`)
@@ -26,10 +21,10 @@ app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
 app.get('/', (req, res) => {
-	LOG.client('Client on /')
+	res.json(config.self.routes)
 })
 
-// REGISTER 
+// REGISTER
 // To add routes from client
 const clients = []
 Register.onRegister((req, res) => {
@@ -38,14 +33,21 @@ Register.onRegister((req, res) => {
 
 	res.writeHead(200)
 	res.write(`Register on ${config.self.name}`)
+	res.end()	
 })
 Register.onUnregister((req, res) => {
-	console.log('ici')
 	let client = req.body
 	clients.splice(clients.indexOf(client))
 
+	let count = client.devices.length
+	if(count > 0) 
+		LOG.log(LOG.LEVEL.WARNING, `->  routes loose`)
+	
+	removeRoutes(client)
+
 	res.writeHead(200)
 	res.write(`Unregister form ${config.self.name}`)
+	res.end()
 })
 
 app.use(Register.router)
@@ -60,39 +62,37 @@ function addClient(client) {
 		if(client.device !== undefined && client.device === true
 			&& client.routes !== undefined && client.routes !== null) {
 			LOG.server('New routes find')
-			addRoutes(client)
 		}
 	}
+	addRoutes(client)
 }
 
-function addRoutes(client) {
-	client.routes.forEach(route => {
-		addRoute(route, client)
+function removeRoutes(client) {
+	client.devices.forEach(route => {
+		config.self.routes.splice(config.self.routes.indexOf(route))
 	})
 }
 
-function addRoute(route, client) {
-	app.use('/', createRoute('GET', route, client))
-}
-
-function createRoute(method, route, client) {
-	let forward = `http://${client.host}:${client.port}${route}`
-	LOG.client(`New route: ${route} -> ${forward}`)
-
-	if('GET' === method) {
-		return router.get(route, (req, res) => {
-			forwarding(forward, res)
+function addRoutes(client) {
+	if(client.devices !== undefined) {
+		client.devices.forEach(device => {
+			addRoute(device, client)
 		})
 	}
 }
 
-function forwarding(route, res) {
-	request.get(route, (err, resp, body) => {
-		let header = resp.headers['content-type'].split(';')[0]
-		res.setHeader('Content-Type', header)
-		res.send(body)
-	})
+function addRoute(device, client) {
+	config.self.routes.push(device.routes)
+
+	if(config.self.router === undefined) {
+		config.self.router = []
+	}
+
+	let simpleRouter = new SimpleRouter(device, client)
+	config.self.router.push(simpleRouter)
+	app.use('/', simpleRouter.router)
 }
+
 
 // Event on exit to notify clients
 process.on('SIGINT', () => {
@@ -115,7 +115,7 @@ function notify(client, event, next) {
 
 	request.post(options, (err, res, body) => {
 		if(!err && res.statusCode == 200) {
-
+			// TODO ?
 		}
 
 		next()

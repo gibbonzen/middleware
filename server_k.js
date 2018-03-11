@@ -5,15 +5,21 @@ const io = require('socket.io')(server)
 const request = require('request')
 const bodyParser = require('body-parser')
 const Tools = require('./lib/Tools')
+const path = require('path')
 const LOG = require('./lib/LOG')
 const Connect = require('./lib/Connect')
 //const EventEmitter = require('events')
 const Register = require('./lib/Register')
+const DeviceFactory = require('./lib/DeviceFactory')
+
+// MODE DEV // 
+global.MODE_DEV = process.argv.find(arg => arg === "MODE_DEV")
+
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-const config = Tools.loadJsonFile('./config.json')
+const config = Tools.loadJsonFile('./config_server_k.json')
 
 let connection = config.server
 connection.body = config.self
@@ -44,30 +50,30 @@ process.on('SIGINT', () => {
 	notifyServer('disconnect', () => process.exit())
 })
 
-function notifyServer(event, disconnect) {
-	toHome.emit(event, this)
-	disconnect()
+function notifyServer(event, next) {
+	//toHome.emit(event, this)
+	//toHome.on('disconnected', () => next())
+	toHome.disconnect(next)
 }
 
 
-let devices = {
-	camera: {
-		path: '/camera',
-		type: 'CameraRoute'
-	},
-	temperature: {
-		path: '/temperature', 
-		type: 'TemperatureRoute'
-	}
-}
+// -------------------------------------------
+// Loading all device from json files
+const devices = []
+let devicesPath = './devices/'
+Tools.readDir(devicesPath) // Read all devices into directory 
+	.filter(f => path.extname(f).match(/json/)) // Filter json files
+	.forEach(f => {
+		let device = DeviceFactory.createNewDevice(
+			Tools.loadJsonFile(path.resolve(devicesPath + f))
+		)
 
-const Router = require('./lib/Route')
+		if(device !== undefined) {
+			devices.push(device)
+			app.use(`/${device.type}`, device.router)
+		}
+	})
+config.self.devices = devices
+toHome.sendRoutes(devices)
 
-for(let index in devices) {
-	if(devices.hasOwnProperty(index)) {
-		let device = devices[index]
-		let myRouter = Router(device.type)
-
-		app.use(device.path, myRouter.router)
-	}
-}
+// -------------------------------------------

@@ -1,0 +1,11 @@
+{
+    "self": {
+        "name": "server_h",
+        "device": false,
+        "host": "localhost",
+        "port": 8080, 
+        "routes": [
+            "/porte"
+        ]
+    }
+}
