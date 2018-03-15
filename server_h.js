@@ -31,6 +31,8 @@ Register.onRegister((req, res) => {
 	let client = req.body
 	addClient(client)
 
+	countRoutes(client, true)	
+
 	res.writeHead(200)
 	res.write(`Register on ${config.self.name}`)
 	res.end()	
@@ -39,11 +41,8 @@ Register.onUnregister((req, res) => {
 	let client = req.body
 	clients.splice(clients.indexOf(client))
 
-	let count = client.devices.length
-	if(count > 0) 
-		LOG.log(LOG.LEVEL.WARNING, `->  routes loose`)
-	
 	removeRoutes(client)
+	countRoutes(client, false)
 
 	res.writeHead(200)
 	res.write(`Unregister form ${config.self.name}`)
@@ -60,8 +59,8 @@ function addClient(client) {
 		clients.push(client)
 
 		if(client.device !== undefined && client.device === true
-			&& client.routes !== undefined && client.routes !== null) {
-			LOG.server('New routes find')
+			&& client.devices !== undefined && client.devices !== null) {
+			LOG.server('New routes find...')
 		}
 	}
 	addRoutes(client)
@@ -82,8 +81,6 @@ function addRoutes(client) {
 }
 
 function addRoute(device, client) {
-	config.self.routes.push(device.routes)
-
 	if(config.self.router === undefined) {
 		config.self.router = []
 	}
@@ -91,8 +88,16 @@ function addRoute(device, client) {
 	let simpleRouter = new SimpleRouter(device, client)
 	config.self.router.push(simpleRouter)
 	app.use('/', simpleRouter.router)
+
+	config.self.routes.push('/' + device.type)
 }
 
+function countRoutes(client, addOrRemove) {
+	let word = addOrRemove ? "added" : "removed"
+	let count = 0;
+	client.devices.forEach(d => count += d.routes.length)
+	LOG.log(LOG.LEVEL.INFO, `-> ${count} routes ${word} for ${client.name}`)
+}
 
 // Event on exit to notify clients
 process.on('SIGINT', () => {

@@ -2,11 +2,5 @@
 	"type": "meteo",
 	"name": "Météo", 
 	"status": "NONE",
-	"connection": {
-		"type": "GPIO",
-		"properties": {
-			"numero": 8,
-			"way": "IN"
-		}
-	}
+	"connection": {}
 }
