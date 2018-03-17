@@ -2,5 +2,10 @@
 	"type": "meteo",
 	"name": "Météo", 
 	"status": "NONE",
-	"connection": {}
+	"connection": {},
+	"routes": [
+		{"path": "/", "post": false},
+		{"path": "/temperature", "post": false},
+		{"path": "/humidity", "post": false}
+	]
 }
