@@ -2,10 +2,8 @@
     "self": {
         "name": "server_h",
         "device": false,
-        "host": "localhost",
+        "host": "192.168.0.88",
         "port": 8080, 
-        "routes": [
-            "/porte"
-        ]
+        "routes": []
     }
 }
