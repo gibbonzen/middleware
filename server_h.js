@@ -1,6 +1,7 @@
 const express = require('express')
 const router = express.Router()
 const app = express()
+const cors = require('cors')
 const server = require('http').Server(app)
 const io = require('socket.io')(server)
 const request = require('request')
@@ -17,6 +18,7 @@ server.listen(config.self.port, config.self.host, () => {
 	LOG.server(`Listen on http://${config.self.host}:${config.self.port}`)
 })
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 

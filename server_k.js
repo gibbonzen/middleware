@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const server = require('http').Server(app)
+const cors = require('cors')
 const io = require('socket.io')(server)
 const request = require('request')
 const bodyParser = require('body-parser')
@@ -16,6 +17,7 @@ const DeviceFactory = require('./lib/DeviceFactory')
 global.MODE_DEV = process.argv.find(arg => arg === "MODE_DEV")
 
 
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 

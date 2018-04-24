@@ -7,5 +7,6 @@
 		{"path": "/", "post": false},
 		{"path": "/temperature", "post": false},
 		{"path": "/humidity", "post": false}
+
 	]
 }
