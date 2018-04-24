@@ -7,14 +7,14 @@
 		"filename": "image.jpg",
 		"width": 720,
 		"height": 480,
-		"quality": 75,
+		"quality": 50,
 		"thumb": "none",
 		"timeout": 9999999,
-		"timelapse": 500,
+		"timelapse": 10000,
 		"rotation": 180
 	},
 	"routes": [
-		{"path": "/stream", "post": false}
+		{"path": "/stream", "post": false},
+		{"path": "/picture"}
 	]
-
 }
