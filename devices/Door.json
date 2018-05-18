@@ -1,7 +1,12 @@
 {
   "type": "door",
   "name": "Door",
-  "status": 0,
+  "status": 2,
+  "automate": {
+    "auto": false,
+    "hopen": "07:30",
+    "hclose": "22:00"
+  },
   "connection": {
     "type": "GPIO",
     "properties": {
