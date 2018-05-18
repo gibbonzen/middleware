@@ -7,6 +7,13 @@
     "hopen": "07:30",
     "hclose": "22:00"
   },
+  "routes": [
+    {
+      "path": "/settings",
+      "post": true,
+      "get": false
+    }
+  ],
   "connection": {
     "type": "GPIO",
     "properties": {
