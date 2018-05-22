@@ -14,7 +14,7 @@ const SimpleRouter = require('./lib/SimpleRouter')
 
 const config = Tools.loadJsonFile('./config_server_h.json')
 
-server.listen(config.self.port, config.self.host, () => {
+server.listen(config.self.port, () => {
 	LOG.server(`Listen on http://${config.self.host}:${config.self.port}`)
 })
 
@@ -22,8 +22,10 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
+
+
 app.get('/', (req, res) => {
-	res.json(config.self.routes)
+	
 })
 
 // REGISTER
@@ -99,6 +101,8 @@ function countRoutes(client, addOrRemove) {
 	let count = 0;
 	client.devices.forEach(d => count += d.routes.length)
 	LOG.log(LOG.LEVEL.INFO, `-> ${count} routes ${word} for ${client.name}`)
+
+	config.self.router.forEach(r => LOG.server(r))
 }
 
 // Event on exit to notify clients
