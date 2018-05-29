@@ -1,10 +1,9 @@
 {
   "type": "door",
   "name": "Door",
-  "status": 2,
   "automate": {
-    "auto": false,
-    "hopen": "07:30",
+    "auto": true,
+    "hopen": "07:00",
     "hclose": "22:00"
   },
   "routes": [
@@ -20,5 +19,6 @@
       "numero": 4,
       "way": "OUT"
     }
-  }
+  },
+  "status": 2
 }

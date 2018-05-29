@@ -23,39 +23,39 @@ app.use(bodyParser.urlencoded({extended: true}))
 
 const config = Tools.loadJsonFile('./config_server_k.json')
 
-let connection = config.server
-connection.body = config.self
+//let connection = config.server
+//connection.body = config.self
 
-const toHome = new Connect(connection, true)
+//const toHome = new Connect(connection, true)
 
 server.listen(config.self.port, config.self.host, () => {
 	LOG.client(`Listen on http://${config.self.host}:${config.self.port}`)
-	toHome.connect()
+	//toHome.connect()
 })
 
 // REGISTER
 // Unregister is used by server to notify client her disconnection
-Register.onUnregister((req, res) => {
-	let client = req.body
-	if(client.name === config.server.name) {
-		LOG.log(LOG.LEVEL.WARNING, `Disconnect from ${config.server.name}.`)
-		toHome.emit('connect', false)
-	}
-})
+//Register.onUnregister((req, res) => {
+//	let client = req.body
+//	if(client.name === config.server.name) {
+//		LOG.log(LOG.LEVEL.WARNING, `Disconnect from ${config.server.name}.`)
+//		toHome.emit('connect', false)
+//	}
+//})
 
-app.use(Register.router)
+//app.use(Register.router)
 
 // Event on exit to notify server
 process.on('SIGINT', () => {
-	if(!toHome.isConnected())
+//	if(!toHome.isConnected())
 		process.exit()
-	notifyServer('disconnect', () => process.exit())
+//	notifyServer('disconnect', () => process.exit())
 })
 
 function notifyServer(event, next) {
 	//toHome.emit(event, this)
 	//toHome.on('disconnected', () => next())
-	toHome.disconnect(next)
+//	toHome.disconnect(next)
 }
 
 
@@ -76,6 +76,6 @@ Tools.readDir(devicesPath) // Read all devices into directory
 		}
 	})
 config.self.devices = devices
-toHome.sendRoutes(devices)
+//toHome.sendRoutes(devices)
 
 // -------------------------------------------
