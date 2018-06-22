@@ -1,0 +1,237 @@
+[36mDevice [Camera] find.[0m
+[33mCamera: Init routes[0m
+[36mDevice [Door] find.[0m
+[33mDoor: Init routes[0m
+[33mDoor: Init specific routes[0m
+[33mDoor: Update cron jobs[0m
+Automatic open at: 07:00
+Automatic close at: 22:00
+[36mDevice [Météo] find.[0m
+[33mMétéo: Init routes[0m
+[33mMétéo: Init specific routes[0m
+[32mListen on http://192.168.0.20:3000[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Send last shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
+[33mCamera: Shot arguments: {"output":"/home/pi/Images/tmp/picture.jpg","encoding":"jpg","width":720,"height":480,"brightness":75,"contrast":30,"quality":75,"rotation":180}[0m
+[33mCamera: Take a new shot...[0m
