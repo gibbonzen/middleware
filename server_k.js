@@ -11,11 +11,12 @@ const Connect = require('./lib/Connect')
 //const EventEmitter = require('events')
 const Register = require('./lib/Register')
 const DeviceFactory = require('./lib/DeviceFactory')
+const cors = require('cors')
 
 // MODE DEV // 
 global.MODE_DEV = process.argv.find(arg => arg === "MODE_DEV")
 
-
+app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
