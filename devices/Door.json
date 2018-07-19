@@ -4,7 +4,9 @@
   "delay": 35000,
   "automate": {
     "auto": true,
+    "open": true,
     "hopen": "07:00",
+    "close": true,
     "hclose": "22:00"
   },
   "routes": [
