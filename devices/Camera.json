@@ -13,6 +13,10 @@
 		"timelapse": 10000,
 		"rotation": 180
 	},
+	"variations": {
+		"brightness": 50,
+		"contrast": 20
+	},
 	"routes": [
 		{"path": "/stream", "post": false},
 		{"path": "/picture"}
