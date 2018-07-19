@@ -11,10 +11,12 @@
 		"thumb": "none",
 		"timeout": 9999999,
 		"timelapse": 10000,
-		"rotation": 180
+		"rotation": 180,
+		"brightness":50,
+		"contrast":20,
 	},
 	"variations": {
-		"brightness": 50,
+		"brightness": 75,
 		"contrast": 20
 	},
 	"routes": [
