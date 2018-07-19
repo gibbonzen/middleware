@@ -20,7 +20,7 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-const config = Tools.loadJsonFile('./config_server_k.json')
+global.config = Tools.loadJsonFile('./config_server_k.json')
 
 let connection = config.server
 connection.body = config.self
