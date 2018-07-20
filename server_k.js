@@ -7,10 +7,8 @@ const bodyParser = require('body-parser')
 const Tools = require('./lib/Tools')
 const path = require('path')
 const LOG = require('./lib/LOG')
-const Connect = require('./lib/Connect')
-//const EventEmitter = require('events')
-const Register = require('./lib/Register')
 const DeviceFactory = require('./lib/DeviceFactory')
+const Hardware = require('./lib/Hardware')
 const cors = require('cors')
 
 process.title = "serverk"
@@ -30,7 +28,9 @@ app.all('/*', (req, res, next) => {
 
 
 global.config = Tools.loadJsonFile('./config_server_k.json')
-//const pi = new Hardware(config.hardware)
+const pi = new Hardware()
+
+app.use('/hardware', pi.router)
 
 server.listen(config.self.port, config.self.host, () => {
 	LOG.client(`Listen on http://${config.self.host}:${config.self.port}`)

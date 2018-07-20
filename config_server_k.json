@@ -4,20 +4,5 @@
 		"device": true,
 		"host": "192.168.0.20",
 		"port": 3000
-	},
-	"server": {
-		"name": "server_h",
-		"host": "192.168.0.16", 
-		"port": 8081,
-		"register": {
-			"connect": {
-				"path": "/register",
-				"method": "POST"
-			},
-			"disconnect": {
-				"path": "/unregister",
-				"method": "POST"
-			}
-		}
 	}
 }
