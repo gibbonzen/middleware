@@ -13,6 +13,8 @@ const Register = require('./lib/Register')
 const DeviceFactory = require('./lib/DeviceFactory')
 const cors = require('cors')
 
+process.title = "serverk"
+
 // MODE DEV // 
 global.MODE_DEV = process.argv.find(arg => arg === "MODE_DEV")
 
@@ -20,48 +22,24 @@ app.use(cors())
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({extended: true}))
 
-app.use((req, res, next) => {
+app.all('/*', (req, res, next) => {
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next()
 })
 
+
 global.config = Tools.loadJsonFile('./config_server_k.json')
-
-let connection = config.server
-connection.body = config.self
-
-const toHome = new Connect(connection, true)
+//const pi = new Hardware(config.hardware)
 
 server.listen(config.self.port, config.self.host, () => {
 	LOG.client(`Listen on http://${config.self.host}:${config.self.port}`)
-	toHome.connect()
 })
-
-// REGISTER
-// Unregister is used by server to notify client her disconnection
-Register.onUnregister((req, res) => {
-	let client = req.body
-	if(client.name === config.server.name) {
-		LOG.log(LOG.LEVEL.WARNING, `Disconnect from ${config.server.name}.`)
-		toHome.emit('connect', false)
-	}
-})
-
-app.use(Register.router)
 
 // Event on exit to notify server
 process.on('SIGINT', () => {
-	if(!toHome.isConnected())
-		process.exit()
-	notifyServer('disconnect', () => process.exit())
+	process.exit()
 })
-
-function notifyServer(event, next) {
-	//toHome.emit(event, this)
-	//toHome.on('disconnected', () => next())
-	toHome.disconnect(next)
-}
 
 
 // -------------------------------------------
@@ -81,6 +59,5 @@ Tools.readDir(devicesPath) // Read all devices into directory
 		}
 	})
 config.self.devices = devices
-toHome.sendRoutes(devices)
 
 // -------------------------------------------
